@@ -85,7 +85,14 @@ export default function Page() {
 			setWalletAddress('');
 			fetchWallets();
 		} catch (error) {
-			alert(error.response?.data?.error || 'Failed to add wallet');
+			if (axios.isAxiosError(error)) {
+				// Accessing response safely now
+				alert(error.response?.data?.error || 'Failed to add wallet');
+			} else {
+				// Handle unexpected error types
+				console.error('Unexpected error:', error);
+				alert('An unexpected error occurred');
+			}
 		}
 	};
 
@@ -99,8 +106,16 @@ export default function Page() {
 			alert('Wallet tag updated successfully');
 			fetchWallets();
 		} catch (error) {
-			alert('Failed to update wallet tag');
+			if (axios.isAxiosError(error)) {
+				// Accessing response safely now
+				alert(error.response?.data?.error);
+			} else {
+				// Handle unexpected error types
+				console.error('Unexpected error:', error);
+				alert('Failed to update wallet tag');
+			}
 		}
+		
 	};
 
 	// Deletes a wallet address from the database
@@ -110,7 +125,14 @@ export default function Page() {
 			alert('Wallet deleted successfully');
 			fetchWallets();
 		} catch (error) {
-			alert('Failed to delete wallet');
+			if (axios.isAxiosError(error)) {
+				// Accessing response safely now
+				alert(error.response?.data?.error);
+			} else {
+				// Handle unexpected error types
+				console.error('Unexpected error:', error);
+				alert('Failed to delete wallet');
+			}
 		}
 	};
 
