@@ -12,7 +12,7 @@ import {
     TableHeader,
     TableRow,
 } from '@/components/ui/table';
-import { ChevronRight, Home, CheckCircle, XCircle, Menu } from 'lucide-react';
+import { ChevronRight, Home, CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
 
 interface WalletItem {
