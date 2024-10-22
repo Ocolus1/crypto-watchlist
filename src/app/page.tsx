@@ -13,7 +13,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ChevronRight, Home, CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle } from 'lucide-react';
 
 interface WalletItem {
   address: string;
@@ -24,12 +24,6 @@ interface WalletItem {
 interface ResultItem {
   address: string;
   hasInteracted: boolean;
-}
-
-interface TokenInfo {
-  name: string;
-  ticker: string;
-  holders: number;
 }
 
 export default function WatchdogDashboard() {
