@@ -22,8 +22,8 @@ interface WalletItem {
 }
 
 interface ResultItem {
-  address: string;
-  hasInteracted: boolean;
+	address: string;
+	hasToken: boolean;
 }
 
 export default function WatchdogDashboard() {
@@ -162,15 +162,15 @@ export default function WatchdogDashboard() {
                         <span className="mb-2 sm:mb-0 font-mono text-[#432542] text-sm break-all">
                           {result.address}
                         </span>
-                        {result.hasInteracted ? (
+                        {result.hasToken ? (
                           <div className="flex items-center text-green-900">
                             <CheckCircle className="mr-2 w-5 h-5" />
-                            <span className="font-medium text-sm">Interacted</span>
+                            <span className="font-medium text-sm">Has Token</span>
                           </div>
                         ) : (
                           <div className="flex items-center text-red-900">
                             <XCircle className="mr-2 w-5 h-5" />
-                            <span className="font-medium text-sm">No Interaction</span>
+                            <span className="font-medium text-sm">No Token</span>
                           </div>
                         )}
                       </li>
